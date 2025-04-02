@@ -108,7 +108,7 @@
   </p>
 </details>
 
-###   System Administrator, LCC - A Tech Mahindra Company (Apr 2014 - Feb 2017)
+###   System Administrator, LCC Pakistan Pvt. Ltd. (Apr 2014 - Feb 2017)
 
 <details>
   <summary>View System Administrator Details</summary>
