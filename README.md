@@ -5,7 +5,7 @@
 [![Email](https://img.shields.io/badge/Email-hunzala--ayub@hotmail.com-blue)](mailto:hunzala-ayub@hotmail.com) | [![LinkedIn](https://img.shields.io/badge/LinkedIn-muhammad--hunzla--awan-blue)](https://www.linkedin.com/in/muhammad-hunzla-awan)
 
 <p align="left">
-  Results-driven DevOps Manager with 6+ years of IT project and team leadership, specializing in IoT, cloud computing, and automation. Expertise in Ansible, Python, CI/CD, AWS, Azure, and OCI. Proven ability to deliver innovative solutions and drive operational efficiency.
+  Experienced DevOps Manager with 6+ years of IT project and team leadership, specializing in IoT, cloud computing, and automation. Expertise in Ansible, Python, CI/CD, AWS, Azure, and OCI. Proven ability to deliver innovative solutions and drive operational efficiency.
 </p>
 
 ##   Core Competencies
@@ -60,15 +60,15 @@
   <summary>View DevOps Manager Details</summary>
   <p>
     <ul>
-      <li> **Led** delivery and management of high-impact projects valued at Rs 400M, providing financial oversight to achieve substantial business outcomes.</li>
-      <li>**Engineered** DevOps infrastructure scaling via optimized CI/CD pipelines and automated solutions (Ansible, Python), *resulting in 25% reduced deployment time and 15% increased system reliability*.</li>
-      <li>**Directed** IoT platform development for a major telecom client, *decreasing downtime by 20% and reducing operational costs by 18%*.</li>
-      <li>**Enhanced** cloud infrastructure security and scalability (AWS, Azure, OCI) through stringent policies and automation, *improving operational efficiency by 30%*.</li>
-      <li>**Headed** cross-functional teams in solution delivery, integrating data analysis and customer feedback into agile workflows.</li>
-      <li>**Collaborated** with CTO and executives to define technical standards and best practices, *supporting scalability for a client base that grew by 40%*.</li>
-      <li>**Oversaw** vendor relationships to ensure accountability and cost-effectiveness, *lowering overhead costs by 12%*.</li>
-      <li>**Established** monitoring and logging solutions to proactively resolve system issues, *achieving 99.9% uptime*.</li>
-      <li>**Streamlined** processes via automation and agile project management, *decreasing manual intervention and error rates by 35%*.</li>
+      <li><span style="font-weight: bold;">Spearheaded</span> the delivery and management of high-impact projects valued at Rs 400 million, providing robust project management and financial oversight to achieve substantial business outcomes.</li>
+      <li><span style="font-weight: bold;">Engineered</span> the scaling of the company’s DevOps infrastructure by optimizing CI/CD pipelines and deploying automated solutions with Ansible and Python, resulting in a 25% reduction in deployment time and a 15% increase in system reliability.</li>
+      <li><span style="font-weight: bold;">Led</span> the development of an IoT platform for a major telecom client, enabling remote site monitoring and control that decreased downtime by 20% and reduced operational costs by 18%.</li>
+      <li><span style="font-weight: bold;">Enhanced</span> cloud infrastructure security and scalability across AWS, Azure, and OCI through the implementation of stringent security policies, automation of configurations, and standardization of practices, leading to a 30% improvement in operational efficiency.</li>
+      <li><span style="font-weight: bold;">Directed</span> cross-functional teams in the delivery of high-impact solutions by integrating data analysis, business analysis, and customer feedback into agile project workflows, ensuring alignment with business needs and stakeholder expectations.</li>
+      <li><span style="font-weight: bold;">Collaborated</span> with the CTO and executives to define and implement technical standards and best practices, fortifying infrastructure security and supporting scalability for a client base that grew by 40%.</li>
+      <li><span style="font-weight: bold;">Oversaw</span> vendor relationships to ensure accountability and cost-effectiveness, establishing reliable partnerships that supported the company’s growth objectives and lowered overhead costs by 12%.</li>
+      <li><span style="font-weight: bold;">Established</span> monitoring and logging solutions to proactively identify and resolve system issues, achieving a 99.9% uptime and improving performance reliability across production and internal environments.</li>
+      <li><span style="font-weight: bold;">Streamlined</span> processes through automation and agile project management, enhancing the scalability of web content management, databases, and Linux servers, and decreasing manual intervention and error rates by 35%.</li>
     </ul>
   </p>
 </details>
@@ -79,13 +79,13 @@
   <summary>View Linux Engineer Details</summary>
   <p>
     <ul>
-      <li>**Automated** critical tasks using Ansible, *decreasing operational workload by 40%*.</li>
-      <li>**Migrated** infrastructure to a Kubernetes-based cloud environment (Terraform, Ansible), *enhancing scalability by 50%*.</li>
-      <li>**Configured** and maintained secure VMware vSphere environments, *boosting performance by 20%*.</li>
-      <li>**Developed** automated patch management (AWX, Jinja2 templates), *reducing patching time by 30%*.</li>
-      <li>**Partnered** with network and security teams to implement and maintain compliance.</li>
-      <li>**Deployed** monitoring solutions (Grafana, Prometheus) on Kubernetes clusters.</li>
-      <li>**Hardened** Linux servers using Ansible.</li>
+      <li><span style="font-weight: bold;">Automated</span> critical tasks using Ansible, decreasing operational workload by 40% and minimizing errors across Linux environments.</li>
+      <li><span style="font-weight: bold;">Migrated</span> infrastructure to a Kubernetes-based cloud environment, utilizing Terraform for provisioning and Ansible for configuration management, which enhanced scalability by 50% and streamlined deployment processes.</li>
+      <li><span style="font-weight: bold;">Configured</span> and maintained secure VMware vSphere environments, ensuring system resilience and optimizing resource allocation to boost performance by 20%.</li>
+      <li><span style="font-weight: bold;">Developed</span> an automated patch management solution with AWX and Jinja2 templates, reducing patching time by 30% and strengthening system security.</li>
+      <li><span style="font-weight: bold;">Collaborated</span> with network and security teams to implement and maintain compliance, establishing a secure infrastructure for both production and development environments.</li>
+      <li><span style="font-weight: bold;">Deployed</span> monitoring solutions with Grafana and Prometheus on Kubernetes clusters, creating custom dashboards for real-time insights into resource utilization, performance, and security.</li>
+      <li><span style="font-weight: bold;">Hardened</span> Linux servers using Ansible, applying best practices to improve security posture and ensure compliance with industry standards.</li>
     </ul>
   </p>
 </details>
@@ -96,29 +96,29 @@
   <summary>View Senior Systems Administrator Details</summary>
   <p>
     <ul>
-      <li>**Engineered** and deployed a high-performance VPN server (10,000+ client connections), *significantly enhancing network scalability*.</li>
-      <li>**Led** a team of 10 in building a telecom IoT platform, *reducing operational costs by 22%*.</li>
-      <li>**Improved** security, scalability, and manageability for IoT systems (AWS).</li>
-      <li>**Spearheaded** Microsoft Dynamics 365 implementation, *increasing user productivity by 25%*.</li>
-      <li>**Oversaw** deployment and support of custom IoT solutions.</li>
-      <li>**Collaborated** with stakeholders to define business and system requirements.</li>
-      <li>**Developed** and deployed PostgreSQL databases with high-availability configurations.</li>
-      <li>**Recommended** resource allocation and project priorities.</li>
+      <li><span style="font-weight: bold;">Engineered</span> and deployed a high-performance VPN server capable of supporting up to 10,000 simultaneous client connections, significantly enhancing network scalability and user accessibility.</li>
+      <li><span style="font-weight: bold;">Led</span> a team of 10 in building a telecom IoT platform, enhancing remote site monitoring and control, resulting in a 22% reduction in operational costs and improved operational efficiency.</li>
+      <li><span style="font-weight: bold;">Improved</span> security, scalability, and manageability for IoT systems by implementing updated toolsets and leveraging AWS, resulting in a robust and scalable infrastructure.</li>
+      <li><span style="font-weight: bold;">Spearheaded</span> the implementation of Microsoft Dynamics 365, managing requirements, customization, and training, which streamlined workflows and increased user productivity by 25%.</li>
+      <li><span style="font-weight: bold;">Oversaw</span> the deployment and support of custom IoT solutions, coordinating across teams to ensure timely project delivery and maintain high system availability.</li>
+      <li><span style="font-weight: bold;">Collaborated</span> with stakeholders to define business and system requirements, ensuring alignment and securing buy-in for system improvements.</li>
+      <li><span style="font-weight: bold;">Developed</span> and deployed PostgreSQL databases with high-availability configurations, including replication and clustering, improving data reliability and performance.</li>
+      <li><span style="font-weight: bold;">Recommended</span> resource allocation and project priorities based on technical assessments, contributing to project success and optimal resource utilization.</li>
     </ul>
   </p>
 </details>
 
-###   System Administrator, LCC Pakistan Pvt. Ltd. (Apr 2014 - Feb 2017)
+###   System Administrator, LCC - A Tech Mahindra Company (Apr 2014 - Feb 2017)
 
 <details>
   <summary>View System Administrator Details</summary>
   <p>
     <ul>
-      <li>**Developed** an ERP solution, *boosting business efficiency by 30%*.</li>
-      <li>**Maintained** system standards, *ensuring 99% system availability*.</li>
-      <li>**Configured** and deployed Linux systems for a Remote Monitoring System, *reducing downtime by 15%*.</li>
-      <li>**Designed** and implemented backup solutions.</li>
-      <li>**Streamlined** IT processes.</li>
+      <li><span style="font-weight: bold;">Developed</span> an ERP solution that automated project tracking and invoicing, enhancing data reliability and boosting business efficiency by 30%.</li>
+      <li><span style="font-weight: bold;">Maintained</span> system standards through daily monitoring and verification of hardware, server resources, and key processes, ensuring high availability and system integrity.</li>
+      <li><span style="font-weight: bold;">Configured</span> and deployed Linux systems for a Remote Monitoring System, improving operational control and reducing downtime for mission-critical applications.</li>
+      <li><span style="font-weight: bold;">Designed</span> and implemented backup solutions, safeguarding data and ensuring quick recovery in case of system failures.</li>
+      <li><span style="font-weight: bold;">Streamlined</span> IT processes, reducing response times and increasing productivity by deploying automation for routine tasks.</li>
     </ul>
   </p>
 </details>
@@ -129,10 +129,10 @@
   <summary>View IT Executive Details</summary>
   <p>
     <ul>
-      <li>**Designed** and deployed virtual machines and server environments.</li>
-      <li>**Configured** and monitored network services with Nagios.</li>
-      <li>**Implemented** Apache, Samba, and Asterisk configurations.</li>
-      <li>**Supported** network and system administration needs.</li>
+      <li><span style="font-weight: bold;">Designed</span> and deployed virtual machines and server environments, ensuring reliable and efficient resources for the group’s technical operations.</li>
+      <li><span style="font-weight: bold;">Configured</span> and monitored network services with Nagios, enabling proactive issue identification and resolution across local and remote sites.</li>
+      <li><span style="font-weight: bold;">Implemented</span> Apache, Samba, and Asterisk configurations, enhancing service reliability and meeting internal client requirements.</li>
+      <li><span style="font-weight: bold;">Supported</span> network and system administration needs, streamlining infrastructure setup to ensure optimal performance for on-premises resources.</li>
     </ul>
   </p>
 </details>
@@ -143,10 +143,10 @@
   <summary>View IT Officer Details</summary>
   <p>
     <ul>
-      <li>**Provided** Linux administration support.</li>
-      <li>**Deployed** virtual machines using Xen.</li>
-      <li>**Managed** network configurations and mail server setups.</li>
-      <li>**Maintained** data integrity.</li>
+      <li><span style="font-weight: bold;">Provided</span> Linux administration support for production and development environments, ensuring system stability and quick issue resolution.</li>
+      <li><span style="font-weight: bold;">Deployed</span> virtual machines using Xen, optimizing resource allocation and supporting scalable infrastructure.</li>
+      <li><span style="font-weight: bold;">Managed</span> network configurations and mail server setups, improving communication reliability and system accessibility.</li>
+      <li><span style="font-weight: bold;">Maintained</span> data integrity through regular backups and monitoring, securing critical information for business continuity.</li>
     </ul>
   </p>
 </details>
@@ -157,10 +157,10 @@
   <summary>View I.T. Officer Details</summary>
   <p>
     <ul>
-      <li>**Provided** technical infrastructure support.</li>
-      <li>**Enhanced** transparency and stakeholder engagement.</li>
-      <li>**Managed** and configured systems.</li>
-      <li>**Supported** change processes.</li>
+      <li><span style="font-weight: bold;">Provided</span> comprehensive technical infrastructure support, covering networking, mail server management, and data management to ensure seamless operations.</li>
+      <li><span style="font-weight: bold;">Enhanced</span> transparency and stakeholder engagement by delivering regular updates and sharing key metrics with national and international partners.</li>
+      <li><span style="font-weight: bold;">Managed</span> and configured systems to support cross-functional needs, facilitating efficient data sharing and collaboration.</li>
+      <li><span style="font-weight: bold;">Supported</span> change processes by working closely with management, helping streamline IT functions and align them with organizational goals.</li>
     </ul>
   </p>
 </details>
@@ -171,10 +171,10 @@
   <summary>View Customer Care Representative Details</summary>
   <p>
     <ul>
-      <li>**Resolved** customer issues effectively.</li>
-      <li>**Developed** strong rapport with customers.</li>
-      <li>**Managed** escalations.</li>
-      <li>**Improved** customer experience.</li>
+      <li><span style="font-weight: bold;">Resolved</span> customer issues effectively by providing timely support, enhancing customer satisfaction and loyalty.</li>
+      <li><span style="font-weight: bold;">Developed</span> strong rapport with customers, leveraging active listening and clear communication in high-pressure situations.</li>
+      <li><span style="font-weight: bold;">Managed</span> escalations by identifying core issues and providing swift solutions, maintaining a high standard of customer service.</li>
+      <li><span style="font-weight: bold;">Improved</span> customer experience by adhering to best practices and continuously learning to meet service quality standards.</li>
     </ul>
   </p>
 </details>
@@ -185,9 +185,9 @@
   <summary>View I.T. Assistant Details</summary>
   <p>
     <ul>
-      <li>**Assisted** IT operations.</li>
-      <li>**Collaborated** with management.</li>
-      <li>**Provided** technical support.</li>
+      <li><span style="font-weight: bold;">Assisted</span> IT operations by ensuring smooth functionality of hardware and software, supporting daily organizational activities.</li>
+      <li><span style="font-weight: bold;">Collaborated</span> with management on change processes, contributing to efficient system updates and adaptations.</li>
+      <li><span style="font-weight: bold;">Provided</span> technical support across departments, facilitating quick troubleshooting and maintaining productivity.</li>
     </ul>
   </p>
 </details>
