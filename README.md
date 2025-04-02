@@ -60,7 +60,7 @@
   <summary>View DevOps Manager Details</summary>
   <p>
     <ul>
-      <li>**Led** delivery and management of high-impact projects valued at Rs 400M, providing financial oversight to achieve substantial business outcomes.</li>
+      <li> **Led** delivery and management of high-impact projects valued at Rs 400M, providing financial oversight to achieve substantial business outcomes.</li>
       <li>**Engineered** DevOps infrastructure scaling via optimized CI/CD pipelines and automated solutions (Ansible, Python), *resulting in 25% reduced deployment time and 15% increased system reliability*.</li>
       <li>**Directed** IoT platform development for a major telecom client, *decreasing downtime by 20% and reducing operational costs by 18%*.</li>
       <li>**Enhanced** cloud infrastructure security and scalability (AWS, Azure, OCI) through stringent policies and automation, *improving operational efficiency by 30%*.</li>
