@@ -54,7 +54,7 @@
 
 ##   Professional Experience
 
-###   DevOps Manager, Designx Solutions (Mar 2019 - Present)
+###   DevOps Manager, Encore Solutions (Mar 2019 - Present)
 
 <details>
   <summary>View DevOps Manager Details</summary>
@@ -73,7 +73,7 @@
   </p>
 </details>
 
-###   Linux Engineer, STG Systems (Mar 2022 - Sep 2024)
+###   Linux Engineer, IT Data Resources & Service Providers (Mar 2022 - Sep 2024)
 
 <details>
   <summary>View Linux Engineer Details</summary>
