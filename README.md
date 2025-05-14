@@ -111,9 +111,9 @@ Cloud Infrastructure Management, DevOps and Automation, IoT and Embedded Systems
 
 **Education**
 
-Master of Information Technology - Computer Science | Virtual University of Pakistan, 2014 - 2016
-Post-Graduate Diploma - Computer Programming | Allama Iqbal Open University, 2012 - 2013
-BE - Telecommunications | Army Public College of Management & Sciences, 2005 - 2009
+* Master of Information Technology - Computer Science | Virtual University of Pakistan, 2014 - 2016
+* Post-Graduate Diploma - Computer Programming | Allama Iqbal Open University, 2012 - 2013
+* BE - Telecommunications | Army Public College of Management & Sciences, 2005 - 2009
 
 ---
 
