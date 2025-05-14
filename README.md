@@ -1,21 +1,22 @@
-**MUHAMMAD HUNZLA AYUB AWAN**
+# MUHAMMAD HUNZLA AYUB AWAN
+---
 hunzala-ayub@hotmail.com | +923340544938 | linkedin.com/in/muhammad-hunzla-awan
 
 ---
 
-**Summary**
+## Summary
 
 Visionary and results-oriented **Technology Leader** with 6+ years of experience in **strategic planning**, **team leadership**, and driving **digital transformation** across **DevOps**, **Cloud Infrastructure**, **IoT Solutions**, and **IT Operations**. Proven ability to design and implement **scalable, secure, and cost-effective solutions** that align with **business objectives** and deliver significant **ROI**. Expertise includes building and mentoring **high-performing teams**, managing **large-scale projects**, fostering **cross-functional collaboration**, and leveraging technologies such as **AWS, Azure, OCI, Kubernetes, Docker, Ansible, Python, and CI/CD** to enhance **operational efficiency** and **system reliability**.
 
 ---
 
-**Core Competencies**
+## Core Competencies
 
 Cloud Infrastructure Management, DevOps and Automation, IoT and Embedded Systems, Data Analysis, AI Proficiency, Technical Consulting, Cross-Functional Leadership, Client Relationship Management, Telecommunications Solutions, ERP Implementation, CRM Implementation, IT Infrastructure Project Management, Network Management, Database Management, Strategic Planning, Team Leadership, Business Acumen, Stakeholder Management, Program Management, Technical Architecture, System Design, Security Policies, Performance Optimization, Vendor Management.
 
 ---
 
-**Technology Stacks/Methodologies**
+## Technology Stacks/Methodologies
 
 * **Cloud Platforms:** AWS, Azure, Google Cloud Platform (GCP), Oracle Cloud Infrastructure (OCI)
 * **Containers and Virtualization:** Kubernetes, Docker, VMware vSphere, Xen
@@ -30,9 +31,9 @@ Cloud Infrastructure Management, DevOps and Automation, IoT and Embedded Systems
 
 ---
 
-**Professional Experience**
+## Professional Experience
 
-**DevOps Manager** | Encore Solutions | Mar 2019 - Present
+### DevOps Manager | Encore Solutions | Mar 2019 - Present
 
 * Led the **strategic planning** and **end-to-end delivery** of high-impact **infrastructure and IoT projects** valued up to Rs 400 million, demonstrating strong **program management**, **financial stewardship**, and **risk management** to achieve significant **business outcomes** and **maximize ROI**.
 * Drove the **scalable transformation** of the **DevOps infrastructure** through the **architectural design** and implementation of optimized **CI/CD pipelines** and **automation frameworks** (**Ansible, Python**), directly contributing to a **25% reduction in deployment cycles** and a **15% improvement in system reliability**.
@@ -44,7 +45,7 @@ Cloud Infrastructure Management, DevOps and Automation, IoT and Embedded Systems
 * Established and managed comprehensive **monitoring and logging solutions** to proactively identify and resolve system issues, achieving **99.9% uptime** and significantly improving performance reliability across production and internal environments.
 * Streamlined **IT processes** through **automation and agile project management methodologies**, enhancing the **scalability** of web content management, databases, and Linux servers, and decreasing manual intervention and error rates by **35%**.
 
-**Linux Engineer** | STG Systems | Mar 2022 - Sep 2024
+### Linux Engineer | STG Systems | Mar 2022 - Sep 2024
 
 * Automated critical operational tasks using **Ansible**, significantly decreasing operational workload by **40%** and minimizing errors across complex Linux environments.
 * Led the **infrastructure migration** to a **Kubernetes-based cloud environment**, utilizing **Terraform** for provisioning and **Ansible** for configuration management, which enhanced **scalability by 50%** and streamlined deployment processes.
@@ -54,7 +55,7 @@ Cloud Infrastructure Management, DevOps and Automation, IoT and Embedded Systems
 * Deployed comprehensive **monitoring solutions** with **Grafana and Prometheus** on **Kubernetes clusters**, creating custom dashboards for real-time insights into resource utilization, performance, and security.
 * Hardened Linux servers using **Ansible playbooks** and industry **best practices**, significantly improving the security posture and ensuring compliance with relevant standards.
 
-**Senior Systems Administrator** | Designx Solutions | Feb 2017 - Feb 2019
+### Senior Systems Administrator | Designx Solutions | Feb 2017 - Feb 2019
 
 * Engineered and deployed a high-performance **VPN server architecture** capable of supporting up to 10,000 simultaneous client connections, significantly enhancing **network scalability** and user accessibility.
 * Led a team of 10 in building a **telecom IoT platform**, enhancing remote site monitoring and control capabilities and resulting in a **22% reduction in operational costs** and improved **operational efficiency**.
@@ -65,7 +66,7 @@ Cloud Infrastructure Management, DevOps and Automation, IoT and Embedded Systems
 * Developed and deployed **PostgreSQL databases** with **high-availability configurations**, including replication and clustering, significantly enhancing data reliability and performance.
 * Recommended **resource allocation** and project priorities based on thorough **technical assessments**, contributing to overall project success and optimal resource utilization.
 
-**System Administrator** | LCC - A Tech Mahindra Company | Apr 2014 - Feb 2017
+### System Administrator | LCC - A Tech Mahindra Company | Apr 2014 - Feb 2017
 
 * Developed and implemented an **ERP solution** that automated project tracking and invoicing, significantly enhancing data reliability and boosting overall business efficiency by **30%**.
 * Maintained rigorous system standards through daily monitoring and verification of hardware, server resources, and key processes, ensuring **99% system availability** and data integrity.
@@ -73,35 +74,35 @@ Cloud Infrastructure Management, DevOps and Automation, IoT and Embedded Systems
 * Designed and implemented robust **backup and recovery solutions**, safeguarding critical data and ensuring quick restoration in case of system failures.
 * Streamlined **IT processes**, reducing response times and increasing productivity by deploying automation for routine administrative tasks.
 
-**IT Executive** | Mercurial Minds | Jun 2013 - Apr 2014
+### IT Executive | Mercurial Minds | Jun 2013 - Apr 2014
 
 * Designed and deployed **virtual machines** and server environments (**VMware/Xen based**), ensuring reliable and efficient computing resources for the group’s technical operations.
 * Configured and monitored **network services** with **Nagios**, enabling proactive issue identification and resolution across local and remote sites.
 * Implemented and managed **Apache, Samba, and Asterisk configurations**, enhancing service reliability and meeting internal client requirements.
 * Supported core **network and system administration needs**, streamlining infrastructure setup to ensure optimal performance for on-premises resources.
 
-**IT Officer** | Earth Factor | Dec 2011 - Jun 2013
+### IT Officer | Earth Factor | Dec 2011 - Jun 2013
 
 * Provided comprehensive **Linux administration support** for production and development environments, ensuring system stability and quick issue resolution.
 * Deployed **virtual machines** using **Xen**, optimizing resource allocation and supporting scalable infrastructure.
 * Managed network configurations and mail server setups, improving communication reliability and system accessibility.
 * Maintained data integrity through regular backups and monitoring, securing critical information for business continuity.
 
-**I.T. Officer** | Society for Sustainable Development | Jan 2010 - Apr 2013
+### I.T. Officer | Society for Sustainable Development | Jan 2010 - Apr 2013
 
 * Provided comprehensive **technical infrastructure support**, covering networking, mail server management, and data management to ensure seamless organizational operations.
 * Enhanced transparency and **stakeholder engagement** by delivering regular updates and sharing key metrics with national and international partners.
 * Managed and configured systems to support **cross-functional needs**, facilitating efficient data sharing and collaboration.
 * Supported organizational **change processes** by working closely with management, helping streamline IT functions and align them with organizational goals.
 
-**Customer Care Representative** | Jazz | Aug 2010 - Sep 2011
+### Customer Care Representative | Jazz | Aug 2010 - Sep 2011
 
 * Resolved customer issues effectively by providing timely support, enhancing customer satisfaction and loyalty.
 * Developed strong rapport with customers, leveraging active listening and clear communication in high-pressure situations.
 * Managed escalations by identifying core issues and providing swift solutions, maintaining a high standard of customer service.
 * Improved customer experience by adhering to best practices and continuously learning to meet service quality standards.
 
-**I.T. Assistant (Part-Time)** | Pakistan AIDS Control Federation | Mar 2007 - May 2009
+### I.T. Assistant (Part-Time) | Pakistan AIDS Control Federation | Mar 2007 - May 2009
 
 * Assisted IT operations by ensuring smooth functionality of hardware and software, supporting daily organizational activities.
 * Collaborated with management on change processes, contributing to efficient system updates and adaptations.
@@ -109,7 +110,7 @@ Cloud Infrastructure Management, DevOps and Automation, IoT and Embedded Systems
 
 ---
 
-**Education**
+## Education
 
 * Master of Information Technology - Computer Science | Virtual University of Pakistan, 2014 - 2016
 * Post-Graduate Diploma - Computer Programming | Allama Iqbal Open University, 2012 - 2013
@@ -117,6 +118,8 @@ Cloud Infrastructure Management, DevOps and Automation, IoT and Embedded Systems
 
 ---
 
-**Professional Certification**
+## Professional Certification
 
-Foundations of Project Management - Google Project Management Professional (Coursera) - X5X5TPWCDSZU
+* Foundations of Project Management - Google Project Management Professional (Coursera) - X5X5TPWCDSZU
+
+---
