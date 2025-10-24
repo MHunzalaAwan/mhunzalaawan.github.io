@@ -12,13 +12,13 @@
         }
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
         
-        /* Custom Grid for Desktop Layout: Sidebar (fixed width) + Main Content (fluid) */
-        @media (min-width: 768px) {
-            .grid-cols-layout {
-                grid-template-columns: 20rem 1fr; /* 320px sidebar width */
-            }
+        /* The main container uses flex on desktop to align the sidebar and content */
+        .page-wrapper {
+            display: flex;
+            min-height: 100vh;
         }
-        
+
+        /* Custom Chart Size */
         .chart-container {
             position: relative;
             width: 100%;
@@ -35,6 +35,7 @@
             }
         }
         
+        /* Timeline Styling */
         .timeline-item {
             position: relative;
             padding-bottom: 2.5rem;
@@ -85,8 +86,8 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
         }
         .stat-card:hover {
-            transform: translateY(-8px) scale(1.03); /* Larger lift */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+            transform: translateY(-4px) scale(1.02); /* Subtle lift */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); 
             background-color: #f0fdfa; /* Light teal background on hover */
         }
 
@@ -99,32 +100,8 @@
         }
     </style>
 </head>
-<!-- Applying the custom grid layout for desktop -->
-<body class="bg-stone-100 text-stone-800 grid grid-cols-1 md:grid-cols-layout min-h-screen">
 
-    <!-- Sidebar Navigation -->
-    <aside id="sidebar" class="bg-white p-6 shadow-2xl fixed top-0 left-0 h-full z-30 -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:static md:shadow-none md:w-full">
-        <h1 class="text-3xl font-extrabold text-teal-700 mb-2">Muhammad Hunzla A.A.</h1>
-        <p class="text-sm text-stone-500 mb-6 font-medium">Visionary DevOps & Cloud Leader</p>
-        
-        <nav>
-            <ul class="space-y-3" onclick="closeMobileMenu()">
-                <li><a href="#" class="nav-link active" onclick="showSection('home', this)">Home</a></li>
-                <li><a href="#" class="nav-link" onclick="showSection('impact', this)">Impact & Achievements</a></li>
-                <li><a href="#" class="nav-link" onclick="showSection('skills', this)">Skills Dashboard</a></li>
-                <li><a href="#" class="nav-link" onclick="showSection('timeline', this)">Career Timeline</a></li>
-                <li><a href="#" class="nav-link" onclick="showSection('projects', this)">AI & IoT Projects</a></li>
-                <li><a href="#" class="nav-link" onclick="showSection('education', this)">Education & Certs</a></li>
-            </ul>
-        </nav>
-        
-        <div class="absolute bottom-6 left-6 right-6 pt-4 border-t border-stone-200">
-            <p class="text-sm font-semibold text-stone-700 mb-2">Connect</p>
-            <p class="text-xs text-stone-500 break-words">hunzala-ayub@hotmail.com</p>
-            <p class="text-xs text-stone-500 break-words">+923340544938</p>
-            <a href="https://linkedin.com/in/muhammad-hunzla-awan" target="_blank" class="text-sm text-teal-600 hover:text-teal-800 font-medium mt-1 inline-block transition-colors">LinkedIn Profile &rarr;</a>
-        </div>
-    </aside>
+<body class="bg-stone-100 text-stone-800">
 
     <!-- Mobile Header (needed to show toggle button) -->
     <header class="md:hidden w-full p-4 bg-white shadow-lg fixed top-0 left-0 z-40 flex justify-between items-center">
@@ -136,351 +113,383 @@
         </button>
     </header>
 
-    <!-- Main Content - Now takes 100% of the remaining width on desktop -->
-    <main class="flex-1 p-6 md:p-12 lg:p-16 overflow-y-auto pt-20 md:pt-12">
+    <!-- Page Wrapper for Desktop (Sidebar + Main Content) -->
+    <div class="page-wrapper">
         
-        <!-- Section: Home -->
-        <section id="home">
-            <div class="max-w-6xl">
-                <h2 class="text-4xl lg:text-6xl font-extrabold text-stone-800 mb-4 tracking-tight">Visionary DevOps & Cloud Infrastructure Leader</h2>
-                <h3 class="text-xl lg:text-2xl font-semibold text-teal-600 mb-10 border-b-2 border-teal-200 pb-4">Strategic Program Management | IoT Solutions Architect</h3>
+        <!-- Sidebar Navigation -->
+        <!-- Fixed width (80) on desktop, hidden on mobile by default -->
+        <aside id="sidebar" class="bg-white p-6 shadow-2xl fixed top-0 left-0 w-80 h-full z-30 -translate-x-full transition-transform duration-300 ease-in-out md:translate-x-0 md:shadow-xl md:w-80">
+            <h1 class="text-3xl font-extrabold text-teal-700 mb-2">Muhammad Hunzla A.A.</h1>
+            <p class="text-sm text-stone-500 mb-6 font-medium">Visionary DevOps & Cloud Leader</p>
+            
+            <nav>
+                <ul class="space-y-3" onclick="closeMobileMenu()">
+                    <li><a href="#" class="nav-link active" onclick="showSection('home', this)">Home</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('impact', this)">Impact & Achievements</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('skills', this)">Skills Dashboard</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('timeline', this)">Career Timeline</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('projects', this)">AI & IoT Projects</a></li>
+                    <li><a href="#" class="nav-link" onclick="showSection('education', this)">Education & Certs</a></li>
+                </ul>
+            </nav>
+            
+            <div class="absolute bottom-6 left-6 right-6 pt-4 border-t border-stone-200">
+                <p class="text-sm font-semibold text-stone-700 mb-2">Connect</p>
+                <p class="text-xs text-stone-500 break-words">hunzala-ayub@hotmail.com</p>
+                <p class="text-xs text-stone-500 break-words">+923340544938</p>
+                <a href="https://linkedin.com/in/muhammad-hunzla-awan" target="_blank" class="text-sm text-teal-600 hover:text-teal-800 font-medium mt-1 inline-block transition-colors">LinkedIn Profile &rarr;</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="flex-1 p-6 md:p-12 lg:p-16 overflow-y-auto pt-20 md:pt-6">
+            <div class="max-w-7xl mx-auto"> <!-- Outer container to center content on large screens -->
+            
+                <!-- Section: Home -->
+                <section id="home">
+                    <div class="max-w-6xl">
+                        <h2 class="text-4xl lg:text-5xl font-extrabold text-stone-800 mb-4 tracking-tight">Visionary DevOps & Cloud Infrastructure Leader</h2>
+                        <h3 class="text-xl lg:text-2xl font-semibold text-teal-600 mb-10 border-b-2 border-teal-200 pb-4">Strategic Program Management | IoT Solutions Architect</h3>
+                        
+                        <p class="text-lg text-stone-700 leading-relaxed max-w-5xl mb-16">
+                            Welcome to my interactive portfolio. As a **Visionary Technology Leader with 13+ years of progressive experience, including 6+ years in strategic leadership**, I drive digital transformation across DevOps, Cloud Infrastructure, IoT Solutions, and IT Operations. I specialize in designing and implementing **scalable, secure, and cost-effective solutions** delivering significant ROI, leveraging cutting-edge technologies like **Kubernetes, CI/CD, and AI/MLOps**. This dashboard highlights my ability to build high-performing teams, manage large-scale projects, and automate workflows for enhanced data insights.
+                        </p>
+
+                        <h4 class="text-3xl font-bold text-stone-700 mb-8">At a Glance: Key Metrics</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 lg:gap-8">
+                            <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200">
+                                <span class="text-5xl font-extrabold text-teal-600 block mb-2">13+</span>
+                                <span class="text-lg font-medium text-stone-600">Years of Progressive Experience</span>
+                            </div>
+                            <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200">
+                                <span class="text-5xl font-extrabold text-teal-600 block mb-2">6+</span>
+                                <span class="text-lg font-medium text-stone-600">Years in Strategic Leadership</span>
+                            </div>
+                            <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200">
+                                <span class="text-5xl font-extrabold text-teal-600 block mb-2">Rs 400M</span>
+                                <span class="text-lg font-medium text-stone-600">High-Impact Project Value Led</span>
+                            </div>
+                            <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200">
+                                <span class="text-5xl font-extrabold text-teal-600 block mb-2">35%</span>
+                                <span class="text-lg font-medium text-stone-600">Manual Intervention Reduction</span>
+                            </div>
+                            <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200 hidden xl:block">
+                                <span class="text-5xl font-extrabold text-teal-600 block mb-2">99.9%</span>
+                                <span class="text-lg font-medium text-stone-600">System Uptime Achieved</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Impact & Achievements -->
+                <section id="impact" class="hidden">
+                    <div class="max-w-6xl">
+                        <h2 class="text-3xl font-bold text-stone-800 mb-6">Quantified Impact & Achievements</h2>
+                        <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
+                            My leadership philosophy centers on delivering measurable results across DevOps, Cloud, and IoT. By architecting optimized CI/CD pipelines, deploying robust IoT platforms, and automating critical tasks, I've consistently driven system reliability, operational efficiency, and cost reduction. This chart visualizes my top six quantified achievements from my professional roles. Hover over each bar for context.
+                        </p>
+
+                        <div class="bg-white p-8 rounded-xl shadow-xl border border-stone-200 mb-12">
+                            <h3 class="text-xl font-bold text-center text-teal-700 mb-6">Key Metric Improvements</h3>
+                            <div class="chart-container">
+                                <canvas id="impactBarChart"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="mt-12">
+                            <h3 class="text-2xl font-bold text-stone-700 mb-6 border-b pb-2 border-stone-200">Achievement Highlights by Role</h3>
+                            <div class="space-y-6">
+                                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500 transition-shadow hover:shadow-xl">
+                                    <h4 class="text-lg font-bold text-teal-700">DevOps Manager (Encore Solutions)</h4>
+                                    <ul class="list-disc list-inside mt-2 text-stone-600 space-y-1">
+                                        <li>Led strategic planning and delivery of infrastructure/IoT projects valued up to **Rs 400 million**.</li>
+                                        <li>Achieved a **25% reduction in deployment cycles** by architecting optimized CI/CD pipelines and automation frameworks.</li>
+                                        <li>Deployed a comprehensive IoT platform for a telecom client, resulting in a **20% decrease in downtime** and an **18% reduction in operational costs**.</li>
+                                        <li>Enhanced cloud efficiency across **AWS, Azure, and OCI** by **30%** through security policy implementation and configuration automation.</li>
+                                        <li>Lowered overhead costs by **12%** by optimizing vendor relationships and ensuring strategic alignment.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500 transition-shadow hover:shadow-xl">
+                                    <h4 class="text-lg font-bold text-teal-700">Linux Engineer (STG Systems)</h4>
+                                    <ul class="list-disc list-inside mt-2 text-stone-600 space-y-1">
+                                        <li>Automated critical operational tasks using Ansible, significantly decreasing operational workload by **40%**.</li>
+                                        <li>Led infrastructure migration to a Kubernetes-based environment using Terraform, enhancing system scalability by **50%**.</li>
+                                        <li>Developed and implemented an automated patch management solution with AWX and Jinja2 templates, reducing patching time by **30%**.</li>
+                                        <li>Deployed comprehensive monitoring solutions with Grafana and Prometheus on Kubernetes clusters.</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500 transition-shadow hover:shadow-xl">
+                                    <h4 class="text-lg font-bold text-teal-700">Senior Systems Administrator (Designx Solutions)</h4>
+                                    <ul class="list-disc list-inside mt-2 text-stone-600 space-y-1">
+                                        <li>Engineered a high-performance VPN server architecture supporting up to **10,000 simultaneous client connections**.</li>
+                                        <li>Led a team of 10 in building a telecom IoT platform, resulting in a **22% reduction in operational costs**.</li>
+                                        <li>Spearheaded the end-to-end implementation of Microsoft Dynamics 365, increasing user productivity by **25%**.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Skills Dashboard -->
+                <section id="skills" class="hidden">
+                    <div class="max-w-6xl">
+                        <h2 class="text-3xl font-bold text-stone-800 mb-6">Skills Dashboard: Core Competencies & Technical Expertise</h2>
+                        <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
+                            This dashboard provides a comprehensive overview of my technical and strategic competencies, aligning my expertise with the demands of modern cloud-native environments. The radar chart below visualizes my core areas of strength, while the filterable grid details the specific technologies I command. Click the buttons to filter the technical stack.
+                        </p>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+                            <div class="bg-white p-8 rounded-xl shadow-xl border border-stone-200">
+                                <h3 class="text-xl font-bold text-center text-teal-700 mb-4">Core Expertise Pillars</h3>
+                                <div class="chart-container" style="height: 300px; max-height: 350px;">
+                                    <canvas id="skillsRadarChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="bg-white p-8 rounded-xl shadow-xl border border-stone-200">
+                                <h3 class="text-xl font-bold text-stone-700 mb-4 border-b pb-2 border-stone-200">Strategic & Leadership Competencies</h3>
+                                <ul class="list-disc list-inside text-stone-700 space-y-2 font-medium">
+                                    <li>Strategic Planning & Program Management</li>
+                                    <li>Cross-Functional Leadership & Team Building</li>
+                                    <li>Client Relationship & Stakeholder Management</li>
+                                    <li>Technical Architecture & System Design</li>
+                                    <li>Security Policies & Compliance</li>
+                                    <li>Vendor Management & Cost Optimization</li>
+                                    <li>AI & Machine Learning Operations (MLOps)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h3 class="text-2xl font-bold text-stone-700 mb-6 border-b-2 pb-2 border-teal-500">Filterable Technology Stack</h3>
+                            <div class="flex flex-wrap gap-3 mb-8">
+                                <button class="skill-filter-btn active bg-teal-600 text-white py-2 px-5 rounded-full font-medium shadow-md transition-colors duration-200 hover:bg-teal-700" onclick="filterSkills('all', this)">All Technologies</button>
+                                <button class="skill-filter-btn bg-white text-stone-700 py-2 px-5 rounded-full border border-stone-300 font-medium shadow-sm transition-colors duration-200 hover:border-teal-400 hover:text-teal-600" onclick="filterSkills('cloud', this)">Cloud & Containers</button>
+                                <button class="skill-filter-btn bg-white text-stone-700 py-2 px-5 rounded-full border border-stone-300 font-medium shadow-sm transition-colors duration-200 hover:border-teal-400 hover:text-teal-600" onclick="filterSkills('devops', this)">DevOps & Automation</button>
+                                <button class="skill-filter-btn bg-white text-stone-700 py-2 px-5 rounded-full border border-stone-300 font-medium shadow-sm transition-colors duration-200 hover:border-teal-400 hover:text-teal-600" onclick="filterSkills('data', this)">IoT, ERP & AI/ML</button>
+                                <button class="skill-filter-btn bg-white text-stone-700 py-2 px-5 rounded-full border border-stone-300 font-medium shadow-sm transition-colors duration-200 hover:border-teal-400 hover:text-teal-600" onclick="filterSkills('db', this)">Database & Scripting</button>
+                            </div>
+
+                            <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+                                <!-- Cloud & Containers -->
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">AWS</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">Azure</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">GCP</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">OCI</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">Kubernetes</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">Docker</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">VMware vSphere</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">Xen Virtualization</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">Linux/UNIX</span></div>
+                                <!-- DevOps & Automation -->
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">Ansible</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">Terraform (IaC)</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">CI/CD Pipelines</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">GitHub Actions</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">Bitbucket</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">AWX</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">Grafana/Prometheus</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">Linux HA Clusters</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">OpenVPN</span></div>
+                                <!-- IoT, ERP & AI/ML -->
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">IoT Platforms</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">Embedded Linux/NetBSD</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">Dynamics 365 (ERP/CRM)</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">AI/MLOps</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">LLAMA/Prompt Engineering</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">ARIMA</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">ArcGIS/QGIS</span></div>
+                                <!-- Database & Scripting -->
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="db"><span class="font-medium text-stone-700">Python Scripting</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="db"><span class="font-medium text-stone-700">Shell Scripting</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="db"><span class="font-medium text-stone-700">PostgreSQL</span></div>
+                                <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="db"><span class="font-medium text-stone-700">MySQL/MSSQL</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section: Career Timeline -->
+                <section id="timeline" class="hidden">
+                    <div class="max-w-4xl">
+                        <h2 class="text-3xl font-bold text-stone-800 mb-6">Interactive Career Timeline</h2>
+                        <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
+                            My 13-year career has been a progression of increasing technical depth and leadership responsibility. This timeline outlines all eight of my professional roles. Click on any job title to expand or collapse its key responsibilities and achievements.
+                        </p>
+
+                        <div>
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="mb-1 text-sm font-medium text-stone-500">Mar 2019 – Present</div>
+                                <h3 class="text-xl font-bold text-teal-700 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">DevOps Manager</h3>
+                                <p class="font-medium text-stone-600 mb-3">Encore Solutions</p>
+                                <div class="timeline-details text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
+                                    <p>Led strategic planning and delivery of high-impact infrastructure and IoT projects valued up to **Rs 400 million**. Drove scalable transformation by implementing optimized CI/CD pipelines, reducing deployment cycles by **25%**.</p>
+                                    <p>Spearheaded the deployment of a comprehensive IoT platform for a major telecom client, enabling advanced remote site monitoring and control that resulted in a **20% decrease in downtime** and an **18% reduction in operational costs**.</p>
+                                    <p>Enhanced cloud efficiency across AWS, Azure, and OCI by implementing stringent security policies and automating configurations, leading to a **30% improvement in operational efficiency**.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="mb-1 text-sm font-medium text-stone-500">Mar 2022 – Sep 2024</div>
+                                <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">Linux Engineer</h3>
+                                <p class="font-medium text-stone-600 mb-3">STG Systems</p>
+                                <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
+                                    <p>Automated critical operational tasks using Ansible, significantly decreasing operational workload by **40%** and minimizing errors across complex Linux environments.</p>
+                                    <p>Led the infrastructure migration to a Kubernetes-based cloud environment, utilizing Terraform and Ansible, which enhanced scalability by **50%**.</p>
+                                    <p>Developed and implemented an automated patch management solution with AWX and Jinja2 templates, reducing patching time by **30%**.</p>
+                                    <p>Deployed comprehensive monitoring solutions with Grafana and Prometheus on Kubernetes clusters.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="mb-1 text-sm font-medium text-stone-500">Feb 2017 – Feb 2019</div>
+                                <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">Senior Systems Administrator</h3>
+                                <p class="font-medium text-stone-600 mb-3">Designx Solutions</p>
+                                <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
+                                    <p>Engineered and deployed a high-performance VPN server architecture capable of supporting up to **10,000 simultaneous client connections**.</p>
+                                    <p>Led a team of 10 in building a telecom IoT platform, resulting in a **22% reduction in operational costs**.</p>
+                                    <p>Spearheaded the end-to-end implementation of Microsoft Dynamics 365, managing customization and deployment, which increased user productivity by **25%**.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="mb-1 text-sm font-medium text-stone-500">Apr 2014 – Feb 2017</div>
+                                <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">System Administrator</h3>
+                                <p class="font-medium text-stone-600 mb-3">LCC Pakistan Pvt. Ltd.</p>
+                                <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
+                                    <p>Developed and implemented an ERP solution that automated project tracking and invoicing, boosting overall business efficiency by **30%**.</p>
+                                    <p>Configured and deployed Linux systems for a critical Remote Monitoring System, improving operational control and reducing downtime for mission-critical applications by **15%**.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="mb-1 text-sm font-medium text-stone-500">Jun 2013 – Apr 2014</div>
+                                <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">IT Executive</h3>
+                                <p class="font-medium text-stone-600 mb-3">Mercurial Minds</p>
+                                <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
+                                    <p>Designed and deployed virtual machines (VMware/Xen) and configured network services with **Nagios**, enabling proactive issue identification and resolution.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="mb-1 text-sm font-medium text-stone-500">Dec 2011 – Jun 2013</div>
+                                <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">I.T. Officer</h3>
+                                <p class="font-medium text-stone-600 mb-3">Earth Factor</p>
+                                <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
+                                    <p>Provided comprehensive Linux administration support for production and development environments, ensuring system stability.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="mb-1 text-sm font-medium text-stone-500">Jan 2010 – Apr 2013</div>
+                                <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">I.T. Officer</h3>
+                                <p class="font-medium text-stone-600 mb-3">Society for Sustainable Development</p>
+                                <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
+                                    <p>Provided comprehensive technical infrastructure support, covering networking, mail server management, and data management.</p>
+                                </div>
+                            </div>
+
+                            <div class="timeline-item">
+                                <div class="timeline-dot"></div>
+                                <div class="mb-1 text-sm font-medium text-stone-500">Aug 2010 – Sep 2011</div>
+                                <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">Customer Care Representative</h3>
+                                <p class="font-medium text-stone-600 mb-3">Jazz</p>
+                                <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
+                                    <p>Resolved customer issues effectively, developing strong rapport and maintaining high standards of customer service in a high-pressure environment.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
                 
-                <p class="text-lg text-stone-700 leading-relaxed max-w-5xl mb-16">
-                    Welcome to my interactive portfolio. As a **Visionary Technology Leader with 13+ years of progressive experience, including 6+ years in strategic leadership**, I drive digital transformation across DevOps, Cloud Infrastructure, IoT Solutions, and IT Operations. I specialize in designing and implementing **scalable, secure, and cost-effective solutions** delivering significant ROI, leveraging cutting-edge technologies like **Kubernetes, CI/CD, and AI/MLOps**. This dashboard highlights my ability to build high-performing teams, manage large-scale projects, and automate workflows for enhanced data insights.
-                </p>
+                <!-- Section: AI & IoT Projects -->
+                <section id="projects" class="hidden">
+                    <div class="max-w-6xl">
+                        <h2 class="text-3xl font-bold text-stone-800 mb-6">Innovation Portfolio: AI & IoT Personal Projects</h2>
+                        <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
+                            This section highlights my hands-on experience in building modern, intelligent systems, demonstrating my commitment to continuous learning and practical innovation. These projects cover everything from serverless IoT architectures to custom LLM applications, reinforcing my skills in AI/MLOps and advanced data processing.
+                        </p>
 
-                <h4 class="text-3xl font-bold text-stone-700 mb-8">At a Glance: Key Metrics</h4>
-                <!-- Increased gap, using xl:grid-cols-5 for better large screen distribution -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 lg:gap-8">
-                    <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200">
-                        <span class="text-5xl font-extrabold text-teal-600 block mb-2">13+</span>
-                        <span class="text-lg font-medium text-stone-600">Years of Progressive Experience</span>
-                    </div>
-                    <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200">
-                        <span class="text-5xl font-extrabold text-teal-600 block mb-2">6+</span>
-                        <span class="text-lg font-medium text-stone-600">Years in Strategic Leadership</span>
-                    </div>
-                    <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200">
-                        <span class="text-5xl font-extrabold text-teal-600 block mb-2">Rs 400M</span>
-                        <span class="text-lg font-medium text-stone-600">High-Impact Project Value Led</span>
-                    </div>
-                    <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200">
-                        <span class="text-5xl font-extrabold text-teal-600 block mb-2">35%</span>
-                        <span class="text-lg font-medium text-stone-600">Manual Intervention Reduction</span>
-                    </div>
-                    <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200 hidden xl:block">
-                        <span class="text-5xl font-extrabold text-teal-600 block mb-2">99.9%</span>
-                        <span class="text-lg font-medium text-stone-600">System Uptime Achieved</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Impact & Achievements -->
-        <section id="impact" class="hidden">
-            <div class="max-w-6xl">
-                <h2 class="text-3xl font-bold text-stone-800 mb-6">Quantified Impact & Achievements</h2>
-                <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
-                    My leadership philosophy centers on delivering measurable results across DevOps, Cloud, and IoT. By architecting optimized CI/CD pipelines, deploying robust IoT platforms, and automating critical tasks, I've consistently driven system reliability, operational efficiency, and cost reduction. This chart visualizes my top six quantified achievements from my professional roles. Hover over each bar for context.
-                </p>
-
-                <div class="bg-white p-8 rounded-xl shadow-xl border border-stone-200 mb-12">
-                    <h3 class="text-xl font-bold text-center text-teal-700 mb-6">Key Metric Improvements</h3>
-                    <div class="chart-container">
-                        <canvas id="impactBarChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="mt-12">
-                    <h3 class="text-2xl font-bold text-stone-700 mb-6 border-b pb-2 border-stone-200">Achievement Highlights by Role</h3>
-                    <div class="space-y-6">
-                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500 transition-shadow hover:shadow-xl">
-                            <h4 class="text-lg font-bold text-teal-700">DevOps Manager (Encore Solutions)</h4>
-                            <ul class="list-disc list-inside mt-2 text-stone-600 space-y-1">
-                                <li>Led strategic planning and delivery of infrastructure/IoT projects valued up to **Rs 400 million**.</li>
-                                <li>Achieved a **25% reduction in deployment cycles** by architecting optimized CI/CD pipelines and automation frameworks.</li>
-                                <li>Deployed a comprehensive IoT platform for a telecom client, resulting in a **20% decrease in downtime** and an **18% reduction in operational costs**.</li>
-                                <li>Enhanced cloud efficiency across **AWS, Azure, and OCI** by **30%** through security policy implementation and configuration automation.</li>
-                                <li>Lowered overhead costs by **12%** by optimizing vendor relationships and ensuring strategic alignment.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500 transition-shadow hover:shadow-xl">
-                            <h4 class="text-lg font-bold text-teal-700">Linux Engineer (STG Systems)</h4>
-                            <ul class="list-disc list-inside mt-2 text-stone-600 space-y-1">
-                                <li>Automated critical operational tasks using Ansible, significantly decreasing operational workload by **40%**.</li>
-                                <li>Led infrastructure migration to a Kubernetes-based environment using Terraform, enhancing system scalability by **50%**.</li>
-                                <li>Developed and implemented an automated patch management solution with AWX and Jinja2 templates, reducing patching time by **30%**.</li>
-                                <li>Deployed comprehensive monitoring solutions with Grafana and Prometheus on Kubernetes clusters.</li>
-                            </ul>
-                        </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500 transition-shadow hover:shadow-xl">
-                            <h4 class="text-lg font-bold text-teal-700">Senior Systems Administrator (Designx Solutions)</h4>
-                            <ul class="list-disc list-inside mt-2 text-stone-600 space-y-1">
-                                <li>Engineered a high-performance VPN server architecture supporting up to **10,000 simultaneous client connections**.</li>
-                                <li>Led a team of 10 in building a telecom IoT platform, resulting in a **22% reduction in operational costs**.</li>
-                                <li>Spearheaded the end-to-end implementation of Microsoft Dynamics 365, increasing user productivity by **25%**.</li>
-                            </ul>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
+                                <h3 class="text-lg font-bold text-teal-700 mb-2">Serverless AWS IoT Architecture Design</h3>
+                                <p class="text-stone-600">Designed and prototyped a scalable serverless architecture for IoT data ingestion, processing, and analysis using AWS Lambda, IoT Core, Kinesis, and DynamoDB.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
+                                <h3 class="text-lg font-bold text-teal-700 mb-2">A Text2SQL Reasoning Agent</h3>
+                                <p class="text-stone-600">Developed an AI agent leveraging reasoning to translate natural language queries into SQL, providing deep insights into datasets.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
+                                <h3 class="text-lg font-bold text-teal-700 mb-2">Predicting System Downtime (ARIMA)</h3>
+                                <p class="text-stone-600">Implemented a time series forecasting model using ARIMA to predict system downtime from historical logs, enhancing proactive maintenance capabilities.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
+                                <h3 class="text-lg font-bold text-teal-700 mb-2">Llama Tutor: Advanced Educational AI Assistant</h3>
+                                <p class="text-stone-600">Implemented a personalized educational AI assistant using LLAMA models, offering tailored learning experiences across multiple academic levels.</p>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
+                                <h3 class="text-lg font-bold text-teal-700 mb-2">Chat with your Documents (n8n implementation)</h3>
+                                <p class="text-stone-600">Deployed a system enabling conversational interaction with uploaded documents by integrating large language models and automation workflows using n8n for streamlined data extraction and querying.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <!-- Section: Skills Dashboard -->
-        <section id="skills" class="hidden">
-            <div class="max-w-6xl">
-                <h2 class="text-3xl font-bold text-stone-800 mb-6">Skills Dashboard: Core Competencies & Technical Expertise</h2>
-                <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
-                    This dashboard provides a comprehensive overview of my technical and strategic competencies, aligning my expertise with the demands of modern cloud-native environments. The radar chart below visualizes my core areas of strength, while the filterable grid details the specific technologies I command. Click the buttons to filter the technical stack.
-                </p>
+                <!-- Section: Education & Certs -->
+                <section id="education" class="hidden">
+                    <div class="max-w-6xl">
+                        <h2 class="text-3xl font-bold text-stone-800 mb-6">Education & Professional Certifications</h2>
+                        <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
+                            My formal education provides a strong theoretical foundation, while my professional certifications validate my expertise in current, high-demand cloud and project management technologies.
+                        </p>
 
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-                    <div class="bg-white p-8 rounded-xl shadow-xl border border-stone-200">
-                        <h3 class="text-xl font-bold text-center text-teal-700 mb-4">Core Expertise Pillars</h3>
-                        <div class="chart-container" style="height: 300px; max-height: 350px;">
-                            <canvas id="skillsRadarChart"></canvas>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white p-6 rounded-xl shadow-lg border border-stone-200">
+                                <h3 class="text-xl font-bold text-teal-700 mb-4 border-b pb-2 border-stone-200">Academic Degrees</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-bold text-stone-700">Master of Information Technology - Computer Science</p>
+                                        <p class="text-sm text-stone-500">Virtual University of Pakistan (2014 – 2016)</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-stone-700">Post-Graduate Diploma - Computer Programming</p>
+                                        <p class="text-sm text-stone-500">Allama Iqbal Open University (2012 – 2013)</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-stone-700">BE - Telecommunications</p>
+                                        <p class="text-sm text-stone-500">Army Public College of Management & Sciences (2005 – 2009)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bg-white p-6 rounded-xl shadow-lg border border-stone-200">
+                                <h3 class="text-xl font-bold text-teal-700 mb-4 border-b pb-2 border-stone-200">Professional Certifications</h3>
+                                <div class="space-y-4">
+                                    <div>
+                                        <p class="font-bold text-stone-700">Oracle Cloud Infrastructure Architect Associate</p>
+                                        <p class="text-sm text-stone-500">Issued: 22nd October 2025</p>
+                                    </div>
+                                    <div>
+                                        <p class="font-bold text-stone-700">Foundations of Project Management</p>
+                                        <p class="text-sm text-stone-500">Provider: Google Project Management Professional (Coursera)</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="bg-white p-8 rounded-xl shadow-xl border border-stone-200">
-                        <h3 class="text-xl font-bold text-stone-700 mb-4 border-b pb-2 border-stone-200">Strategic & Leadership Competencies</h3>
-                        <ul class="list-disc list-inside text-stone-700 space-y-2 font-medium">
-                            <li>Strategic Planning & Program Management</li>
-                            <li>Cross-Functional Leadership & Team Building</li>
-                            <li>Client Relationship & Stakeholder Management</li>
-                            <li>Technical Architecture & System Design</li>
-                            <li>Security Policies & Compliance</li>
-                            <li>Vendor Management & Cost Optimization</li>
-                            <li>AI & Machine Learning Operations (MLOps)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-2xl font-bold text-stone-700 mb-6 border-b-2 pb-2 border-teal-500">Filterable Technology Stack</h3>
-                    <div class="flex flex-wrap gap-3 mb-8">
-                        <button class="skill-filter-btn active bg-teal-600 text-white py-2 px-5 rounded-full font-medium shadow-md transition-colors duration-200 hover:bg-teal-700" onclick="filterSkills('all', this)">All Technologies</button>
-                        <button class="skill-filter-btn bg-white text-stone-700 py-2 px-5 rounded-full border border-stone-300 font-medium shadow-sm transition-colors duration-200 hover:border-teal-400 hover:text-teal-600" onclick="filterSkills('cloud', this)">Cloud & Containers</button>
-                        <button class="skill-filter-btn bg-white text-stone-700 py-2 px-5 rounded-full border border-stone-300 font-medium shadow-sm transition-colors duration-200 hover:border-teal-400 hover:text-teal-600" onclick="filterSkills('devops', this)">DevOps & Automation</button>
-                        <button class="skill-filter-btn bg-white text-stone-700 py-2 px-5 rounded-full border border-stone-300 font-medium shadow-sm transition-colors duration-200 hover:border-teal-400 hover:text-teal-600" onclick="filterSkills('data', this)">IoT, ERP & AI/ML</button>
-                        <button class="skill-filter-btn bg-white text-stone-700 py-2 px-5 rounded-full border border-stone-300 font-medium shadow-sm transition-colors duration-200 hover:border-teal-400 hover:text-teal-600" onclick="filterSkills('db', this)">Database & Scripting</button>
-                    </div>
-
-                    <div id="skills-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                        <!-- Cloud & Containers -->
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">AWS</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">Azure</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">GCP</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">OCI</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">Kubernetes</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">Docker</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">VMware vSphere</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">Xen Virtualization</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="cloud"><span class="font-medium text-stone-700">Linux/UNIX</span></div>
-                        <!-- DevOps & Automation -->
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">Ansible</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">Terraform (IaC)</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">CI/CD Pipelines</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">GitHub Actions</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">Bitbucket</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">AWX</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">Grafana/Prometheus</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">Linux HA Clusters</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="devops"><span class="font-medium text-stone-700">OpenVPN</span></div>
-                        <!-- IoT, ERP & AI/ML -->
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">IoT Platforms</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">Embedded Linux/NetBSD</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">Dynamics 365 (ERP/CRM)</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">AI/MLOps</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">LLAMA/Prompt Engineering</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">ARIMA</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="data"><span class="font-medium text-stone-700">ArcGIS/QGIS</span></div>
-                        <!-- Database & Scripting -->
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="db"><span class="font-medium text-stone-700">Python Scripting</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="db"><span class="font-medium text-stone-700">Shell Scripting</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="db"><span class="font-medium text-stone-700">PostgreSQL</span></div>
-                        <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="db"><span class="font-medium text-stone-700">MySQL/MSSQL</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Career Timeline -->
-        <section id="timeline" class="hidden">
-            <div class="max-w-4xl">
-                <h2 class="text-3xl font-bold text-stone-800 mb-6">Interactive Career Timeline</h2>
-                <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
-                    My 13-year career has been a progression of increasing technical depth and leadership responsibility. This timeline outlines all eight of my professional roles. Click on any job title to expand or collapse its key responsibilities and achievements.
-                </p>
-
-                <div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="mb-1 text-sm font-medium text-stone-500">Mar 2019 – Present</div>
-                        <h3 class="text-xl font-bold text-teal-700 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">DevOps Manager</h3>
-                        <p class="font-medium text-stone-600 mb-3">Encore Solutions</p>
-                        <div class="timeline-details text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
-                            <p>Led strategic planning and delivery of high-impact infrastructure and IoT projects valued up to **Rs 400 million**. Drove scalable transformation by implementing optimized CI/CD pipelines, reducing deployment cycles by **25%**.</p>
-                            <p>Spearheaded the deployment of a comprehensive IoT platform for a major telecom client, enabling advanced remote site monitoring and control that resulted in a **20% decrease in downtime** and an **18% reduction in operational costs**.</p>
-                            <p>Enhanced cloud efficiency across AWS, Azure, and OCI by implementing stringent security policies and automating configurations, leading to a **30% improvement in operational efficiency**.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="mb-1 text-sm font-medium text-stone-500">Mar 2022 – Sep 2024</div>
-                        <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">Linux Engineer</h3>
-                        <p class="font-medium text-stone-600 mb-3">STG Systems</p>
-                        <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
-                            <p>Automated critical operational tasks using Ansible, significantly decreasing operational workload by **40%** and minimizing errors across complex Linux environments.</p>
-                            <p>Led the infrastructure migration to a Kubernetes-based cloud environment, utilizing Terraform and Ansible, which enhanced scalability by **50%**.</p>
-                            <p>Developed and implemented an automated patch management solution with AWX and Jinja2 templates, reducing patching time by **30%**.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="mb-1 text-sm font-medium text-stone-500">Feb 2017 – Feb 2019</div>
-                        <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">Senior Systems Administrator</h3>
-                        <p class="font-medium text-stone-600 mb-3">Designx Solutions</p>
-                        <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
-                            <p>Engineered and deployed a high-performance VPN server architecture capable of supporting up to **10,000 simultaneous client connections**.</p>
-                            <p>Led a team of 10 in building a telecom IoT platform, resulting in a **22% reduction in operational costs**.</p>
-                            <p>Spearheaded the end-to-end implementation of Microsoft Dynamics 365, managing customization and deployment, which increased user productivity by **25%**.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="mb-1 text-sm font-medium text-stone-500">Apr 2014 – Feb 2017</div>
-                        <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">System Administrator</h3>
-                        <p class="font-medium text-stone-600 mb-3">LCC Pakistan Pvt. Ltd.</p>
-                        <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
-                            <p>Developed and implemented an ERP solution that automated project tracking and invoicing, boosting overall business efficiency by **30%**.</p>
-                            <p>Configured and deployed Linux systems for a critical Remote Monitoring System, improving operational control and reducing downtime for mission-critical applications by **15%**.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="mb-1 text-sm font-medium text-stone-500">Jun 2013 – Apr 2014</div>
-                        <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">IT Executive</h3>
-                        <p class="font-medium text-stone-600 mb-3">Mercurial Minds</p>
-                        <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
-                            <p>Designed and deployed virtual machines (VMware/Xen) and configured network services with **Nagios**, enabling proactive issue identification and resolution.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="mb-1 text-sm font-medium text-stone-500">Dec 2011 – Jun 2013</div>
-                        <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">I.T. Officer</h3>
-                        <p class="font-medium text-stone-600 mb-3">Earth Factor</p>
-                        <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
-                            <p>Provided comprehensive Linux administration support for production and development environments, ensuring system stability.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="mb-1 text-sm font-medium text-stone-500">Jan 2010 – Apr 2013</div>
-                        <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">I.T. Officer</h3>
-                        <p class="font-medium text-stone-600 mb-3">Society for Sustainable Development</p>
-                        <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
-                            <p>Provided comprehensive technical infrastructure support, covering networking, mail server management, and data management.</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="mb-1 text-sm font-medium text-stone-500">Aug 2010 – Sep 2011</div>
-                        <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">Customer Care Representative</h3>
-                        <p class="font-medium text-stone-600 mb-3">Jazz</p>
-                        <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
-                            <p>Resolved customer issues effectively, developing strong rapport and maintaining high standards of customer service in a high-pressure environment.</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
+                </section>
+                
+            </div> <!-- End of max-w-7xl mx-auto -->
+        </main>
         
-        <!-- Section: AI & IoT Projects -->
-        <section id="projects" class="hidden">
-            <div class="max-w-6xl">
-                <h2 class="text-3xl font-bold text-stone-800 mb-6">Innovation Portfolio: AI & IoT Personal Projects</h2>
-                <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
-                    This section highlights my hands-on experience in building modern, intelligent systems, demonstrating my commitment to continuous learning and practical innovation. These projects cover everything from serverless IoT architectures to custom LLM applications, reinforcing my skills in AI/MLOps and advanced data processing.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
-                        <h3 class="text-lg font-bold text-teal-700 mb-2">Serverless AWS IoT Architecture Design</h3>
-                        <p class="text-stone-600">Designed and prototyped a scalable serverless architecture for IoT data ingestion, processing, and analysis using AWS Lambda, IoT Core, Kinesis, and DynamoDB.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
-                        <h3 class="text-lg font-bold text-teal-700 mb-2">A Text2SQL Reasoning Agent</h3>
-                        <p class="text-stone-600">Developed an AI agent leveraging reasoning to translate natural language queries into SQL, providing deep insights into datasets.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
-                        <h3 class="text-lg font-bold text-teal-700 mb-2">Predicting System Downtime (ARIMA)</h3>
-                        <p class="text-stone-600">Implemented a time series forecasting model using ARIMA to predict system downtime from historical logs, enhancing proactive maintenance capabilities.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
-                        <h3 class="text-lg font-bold text-teal-700 mb-2">Llama Tutor: Advanced Educational AI Assistant</h3>
-                        <p class="text-stone-600">Implemented a personalized educational AI assistant using LLAMA models, offering tailored learning experiences across multiple academic levels.</p>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
-                        <h3 class="text-lg font-bold text-teal-700 mb-2">Chat with your Documents (n8n implementation)</h3>
-                        <p class="text-stone-600">Deployed a system enabling conversational interaction with uploaded documents by integrating large language models and automation workflows using n8n for streamlined data extraction and querying.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Section: Education & Certs -->
-        <section id="education" class="hidden">
-            <div class="max-w-6xl">
-                <h2 class="text-3xl font-bold text-stone-800 mb-6">Education & Professional Certifications</h2>
-                <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
-                    My formal education provides a strong theoretical foundation, while my professional certifications validate my expertise in current, high-demand cloud and project management technologies.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-stone-200">
-                        <h3 class="text-xl font-bold text-teal-700 mb-4 border-b pb-2 border-stone-200">Academic Degrees</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <p class="font-bold text-stone-700">Master of Information Technology - Computer Science</p>
-                                <p class="text-sm text-stone-500">Virtual University of Pakistan (2014 – 2016)</p>
-                            </div>
-                            <div>
-                                <p class="font-bold text-stone-700">Post-Graduate Diploma - Computer Programming</p>
-                                <p class="text-sm text-stone-500">Allama Iqbal Open University (2012 – 2013)</p>
-                            </div>
-                            <div>
-                                <p class="font-bold text-stone-700">BE - Telecommunications</p>
-                                <p class="text-sm text-stone-500">Army Public College of Management & Sciences (2005 – 2009)</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="bg-white p-6 rounded-xl shadow-lg border border-stone-200">
-                        <h3 class="text-xl font-bold text-teal-700 mb-4 border-b pb-2 border-stone-200">Professional Certifications</h3>
-                        <div class="space-y-4">
-                            <div>
-                                <p class="font-bold text-stone-700">Oracle Cloud Infrastructure Architect Associate</p>
-                                <p class="text-sm text-stone-500">Issued: 22nd October 2025</p>
-                            </div>
-                            <div>
-                                <p class="font-bold text-stone-700">Foundations of Project Management</p>
-                                <p class="text-sm text-stone-500">Provider: Google Project Management Professional (Coursera)</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
+    </div> <!-- End of page-wrapper -->
 
 <script>
     let impactChart = null;
