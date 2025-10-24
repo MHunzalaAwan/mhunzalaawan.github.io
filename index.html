@@ -4,20 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Portfolio - Muhammad Hunzla Ayub Awan</title>
-    <!-- Chosen Palette: Warm Neutral Harmony (Stone, Teal, White) -->
-    <!-- Goal: Implement responsive justification, enhanced visual appeal, and subtle interactivity (hover effects, cleaner typography, better charts) for a modern, high-impact feel on all screen sizes, especially large monitors. -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Goal: Ensure content is truly justified and dynamic on wide screens by using a fixed sidebar/fluid main content grid layout. Enhanced hover effects and spacing for attraction. -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
         
+        /* Custom Grid for Desktop Layout: Sidebar (fixed width) + Main Content (fluid) */
+        @media (min-width: 768px) {
+            .grid-cols-layout {
+                grid-template-columns: 20rem 1fr; /* 320px sidebar width */
+            }
+        }
+        
         .chart-container {
             position: relative;
             width: 100%;
-            max-width: 700px; /* Increased max width for better visualization on large screens */
+            max-width: 700px; 
             margin-left: auto;
             margin-right: auto;
             height: 350px;
@@ -41,13 +47,13 @@
         }
         .timeline-dot {
             position: absolute;
-            left: -0.625rem; /* Adjusted for larger dot */
+            left: -0.625rem; 
             top: 0.25rem;
             height: 1.25rem;
             width: 1.25rem;
             border-radius: 9999px;
-            background-color: #0d9488; /* Darker teal for visual pop */
-            border: 4px solid #f5f5f4; /* Stone-100 body background */
+            background-color: #0d9488; 
+            border: 4px solid #f5f5f4; 
             transition: background-color 0.3s ease;
         }
 
@@ -75,13 +81,14 @@
              color: white;
         }
 
-        /* Stat Card Interaction */
+        /* Stat Card Interaction - More pronounced interactive effect */
         .stat-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
         }
         .stat-card:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            transform: translateY(-8px) scale(1.03); /* Larger lift */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+            background-color: #f0fdfa; /* Light teal background on hover */
         }
 
         /* Mobile Menu Toggle Animation */
@@ -93,59 +100,59 @@
         }
     </style>
 </head>
-<body class="bg-stone-100 text-stone-800">
+<!-- Applying the custom grid layout for desktop -->
+<body class="bg-stone-100 text-stone-800 grid grid-cols-1 md:grid-cols-layout min-h-screen">
 
-    <div class="flex min-h-screen">
-        <!-- Sidebar Navigation -->
-        <aside id="sidebar" class="w-64 bg-white p-6 shadow-2xl fixed top-0 left-0 h-full z-30 -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out">
-            <h1 class="text-2xl font-extrabold text-teal-700 mb-2">Muhammad Hunzla Ayub Awan</h1>
-            <p class="text-xs text-stone-500 mb-6 font-medium">Visionary DevOps & Cloud Leader</p>
-            
-            <nav>
-                <ul class="space-y-2" onclick="closeMobileMenu()">
-                    <li><a href="#" class="nav-link active" onclick="showSection('home', this)">Home</a></li>
-                    <li><a href="#" class="nav-link" onclick="showSection('impact', this)">Impact & Achievements</a></li>
-                    <li><a href="#" class="nav-link" onclick="showSection('skills', this)">Skills Dashboard</a></li>
-                    <li><a href="#" class="nav-link" onclick="showSection('timeline', this)">Career Timeline</a></li>
-                    <li><a href="#" class="nav-link" onclick="showSection('projects', this)">AI & IoT Projects</a></li>
-                    <li><a href="#" class="nav-link" onclick="showSection('education', this)">Education & Certs</a></li>
-                </ul>
-            </nav>
-            
-            <div class="absolute bottom-6 left-6 right-6 pt-4 border-t border-stone-200">
-                <p class="text-sm font-semibold text-stone-700 mb-2">Connect</p>
-                <p class="text-xs text-stone-500 break-words">hunzala-ayub@hotmail.com</p>
-                <p class="text-xs text-stone-500 break-words">+923340544938</p>
-                <a href="https://linkedin.com/in/muhammad-hunzla-awan" target="_blank" class="text-xs text-teal-600 hover:text-teal-800 font-medium mt-1 inline-block transition-colors">LinkedIn Profile &rarr;</a>
-            </div>
-        </aside>
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar" class="bg-white p-6 shadow-2xl fixed top-0 left-0 h-full z-30 -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:static md:shadow-none md:w-full">
+        <h1 class="text-3xl font-extrabold text-teal-700 mb-2">Muhammad Hunzla A.A.</h1>
+        <p class="text-sm text-stone-500 mb-6 font-medium">Visionary DevOps & Cloud Leader</p>
+        
+        <nav>
+            <ul class="space-y-3" onclick="closeMobileMenu()">
+                <li><a href="#" class="nav-link active" onclick="showSection('home', this)">Home</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('impact', this)">Impact & Achievements</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('skills', this)">Skills Dashboard</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('timeline', this)">Career Timeline</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('projects', this)">AI & IoT Projects</a></li>
+                <li><a href="#" class="nav-link" onclick="showSection('education', this)">Education & Certs</a></li>
+            </ul>
+        </nav>
+        
+        <div class="absolute bottom-6 left-6 right-6 pt-4 border-t border-stone-200">
+            <p class="text-sm font-semibold text-stone-700 mb-2">Connect</p>
+            <p class="text-xs text-stone-500 break-words">hunzala-ayub@hotmail.com</p>
+            <p class="text-xs text-stone-500 break-words">+923340544938</p>
+            <a href="https://linkedin.com/in/muhammad-hunzla-awan" target="_blank" class="text-sm text-teal-600 hover:text-teal-800 font-medium mt-1 inline-block transition-colors">LinkedIn Profile &rarr;</a>
+        </div>
+    </aside>
 
-        <!-- Mobile Header -->
-        <header class="md:hidden w-full p-4 bg-white shadow-lg fixed top-0 left-0 z-40 flex justify-between items-center">
-            <h1 class="text-xl font-bold text-teal-800">M. Hunzla Ayub Awan</h1>
-            <button id="menu-toggle" class="text-stone-700 p-1" onclick="toggleMobileMenu()">
-                <span id="bar1" class="w-6 h-0.5 bg-current block mb-1.5 origin-[0%_0%]"></span>
-                <span id="bar2" class="w-6 h-0.5 bg-current block"></span>
-                <span id="bar3" class="w-6 h-0.5 bg-current block mt-1.5 origin-[0%_100%]"></span>
-            </button>
-        </header>
+    <!-- Mobile Header (needed to show toggle button) -->
+    <header class="md:hidden w-full p-4 bg-white shadow-lg fixed top-0 left-0 z-40 flex justify-between items-center">
+        <h1 class="text-xl font-bold text-teal-800">M. Hunzla Ayub Awan</h1>
+        <button id="menu-toggle" class="text-stone-700 p-1" onclick="toggleMobileMenu()">
+            <span id="bar1" class="w-6 h-0.5 bg-current block mb-1.5 origin-[0%_0%]"></span>
+            <span id="bar2" class="w-6 h-0.5 bg-current block"></span>
+            <span id="bar3" class="w-6 h-0.5 bg-current block mt-1.5 origin-[0%_100%]"></span>
+        </button>
+    </header>
 
-        <!-- Main Content -->
-        <!-- Added max-w-7xl and mx-auto for better center justification on large screens -->
-        <main class="flex-1 md:ml-64 p-6 md:p-10 lg:p-12 overflow-y-auto pt-20 md:pt-10 max-w-7xl mx-auto">
-            
-            <!-- Section: Home -->
-            <section id="home">
-                <h2 class="text-4xl lg:text-5xl font-extrabold text-stone-800 mb-2">Visionary DevOps & Cloud Infrastructure Leader</h2>
-                <h3 class="text-xl font-semibold text-teal-600 mb-8">Strategic Program Management | IoT Solutions Architect</h3>
+    <!-- Main Content - Now takes 100% of the remaining width on desktop -->
+    <main class="flex-1 p-6 md:p-12 lg:p-16 overflow-y-auto pt-20 md:pt-12">
+        
+        <!-- Section: Home -->
+        <section id="home">
+            <div class="max-w-6xl">
+                <h2 class="text-4xl lg:text-6xl font-extrabold text-stone-800 mb-4 tracking-tight">Visionary DevOps & Cloud Infrastructure Leader</h2>
+                <h3 class="text-xl lg:text-2xl font-semibold text-teal-600 mb-10 border-b-2 border-teal-200 pb-4">Strategic Program Management | IoT Solutions Architect</h3>
                 
-                <p class="text-lg text-stone-700 leading-relaxed max-w-5xl mb-12">
+                <p class="text-lg text-stone-700 leading-relaxed max-w-5xl mb-16">
                     Welcome to my interactive portfolio. As a **Visionary Technology Leader with 13+ years of progressive experience, including 6+ years in strategic leadership**, I drive digital transformation across DevOps, Cloud Infrastructure, IoT Solutions, and IT Operations. I specialize in designing and implementing **scalable, secure, and cost-effective solutions** delivering significant ROI, leveraging cutting-edge technologies like **Kubernetes, CI/CD, and AI/MLOps**. This dashboard highlights my ability to build high-performing teams, manage large-scale projects, and automate workflows for enhanced data insights.
                 </p>
 
-                <h4 class="text-3xl font-bold text-stone-700 mb-8 border-b-2 pb-2 border-teal-500">At a Glance: Key Metrics</h4>
-                <!-- Added stat-card class and hover effects -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <h4 class="text-3xl font-bold text-stone-700 mb-8">At a Glance: Key Metrics</h4>
+                <!-- Increased gap, using xl:grid-cols-5 for better large screen distribution -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-6 lg:gap-8">
                     <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200">
                         <span class="text-5xl font-extrabold text-teal-600 block mb-2">13+</span>
                         <span class="text-lg font-medium text-stone-600">Years of Progressive Experience</span>
@@ -162,17 +169,23 @@
                         <span class="text-5xl font-extrabold text-teal-600 block mb-2">35%</span>
                         <span class="text-lg font-medium text-stone-600">Manual Intervention Reduction</span>
                     </div>
+                    <div class="stat-card bg-white p-8 rounded-xl shadow-xl border border-stone-200 hidden xl:block">
+                        <span class="text-5xl font-extrabold text-teal-600 block mb-2">99.9%</span>
+                        <span class="text-lg font-medium text-stone-600">System Uptime Achieved</span>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Section: Impact & Achievements -->
-            <section id="impact" class="hidden">
+        <!-- Section: Impact & Achievements -->
+        <section id="impact" class="hidden">
+            <div class="max-w-6xl">
                 <h2 class="text-3xl font-bold text-stone-800 mb-6">Quantified Impact & Achievements</h2>
                 <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
                     My leadership philosophy centers on delivering measurable results across DevOps, Cloud, and IoT. By architecting optimized CI/CD pipelines, deploying robust IoT platforms, and automating critical tasks, I've consistently driven system reliability, operational efficiency, and cost reduction. This chart visualizes my top six quantified achievements from my professional roles. Hover over each bar for context.
                 </p>
 
-                <div class="bg-white p-8 rounded-xl shadow-xl border border-stone-200">
+                <div class="bg-white p-8 rounded-xl shadow-xl border border-stone-200 mb-12">
                     <h3 class="text-xl font-bold text-center text-teal-700 mb-6">Key Metric Improvements</h3>
                     <div class="chart-container">
                         <canvas id="impactBarChart"></canvas>
@@ -182,7 +195,7 @@
                 <div class="mt-12">
                     <h3 class="text-2xl font-bold text-stone-700 mb-6 border-b pb-2 border-stone-200">Achievement Highlights by Role</h3>
                     <div class="space-y-6">
-                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500">
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500 transition-shadow hover:shadow-xl">
                             <h4 class="text-lg font-bold text-teal-700">DevOps Manager (Encore Solutions)</h4>
                             <ul class="list-disc list-inside mt-2 text-stone-600 space-y-1">
                                 <li>Led strategic planning and delivery of infrastructure/IoT projects valued up to **Rs 400 million**.</li>
@@ -192,7 +205,7 @@
                                 <li>Lowered overhead costs by **12%** by optimizing vendor relationships and ensuring strategic alignment.</li>
                             </ul>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500">
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500 transition-shadow hover:shadow-xl">
                             <h4 class="text-lg font-bold text-teal-700">Linux Engineer (STG Systems)</h4>
                             <ul class="list-disc list-inside mt-2 text-stone-600 space-y-1">
                                 <li>Automated critical operational tasks using Ansible, significantly decreasing operational workload by **40%**.</li>
@@ -201,7 +214,7 @@
                                 <li>Deployed comprehensive monitoring solutions with Grafana and Prometheus on Kubernetes clusters.</li>
                             </ul>
                         </div>
-                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500">
+                        <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-teal-500 transition-shadow hover:shadow-xl">
                             <h4 class="text-lg font-bold text-teal-700">Senior Systems Administrator (Designx Solutions)</h4>
                             <ul class="list-disc list-inside mt-2 text-stone-600 space-y-1">
                                 <li>Engineered a high-performance VPN server architecture supporting up to **10,000 simultaneous client connections**.</li>
@@ -211,10 +224,12 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Section: Skills Dashboard -->
-            <section id="skills" class="hidden">
+        <!-- Section: Skills Dashboard -->
+        <section id="skills" class="hidden">
+            <div class="max-w-6xl">
                 <h2 class="text-3xl font-bold text-stone-800 mb-6">Skills Dashboard: Core Competencies & Technical Expertise</h2>
                 <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
                     This dashboard provides a comprehensive overview of my technical and strategic competencies, aligning my expertise with the demands of modern cloud-native environments. The radar chart below visualizes my core areas of strength, while the filterable grid details the specific technologies I command. Click the buttons to filter the technical stack.
@@ -287,16 +302,18 @@
                         <div class="skill-card bg-stone-50 p-4 rounded-lg shadow-sm text-center border border-stone-200 transition-shadow hover:shadow-lg" data-category="db"><span class="font-medium text-stone-700">MySQL/MSSQL</span></div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Section: Career Timeline -->
-            <section id="timeline" class="hidden">
+        <!-- Section: Career Timeline -->
+        <section id="timeline" class="hidden">
+            <div class="max-w-4xl">
                 <h2 class="text-3xl font-bold text-stone-800 mb-6">Interactive Career Timeline</h2>
                 <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
                     My 13-year career has been a progression of increasing technical depth and leadership responsibility. This timeline outlines all eight of my professional roles. Click on any job title to expand or collapse its key responsibilities and achievements.
                 </p>
 
-                <div class="max-w-4xl">
+                <div>
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="mb-1 text-sm font-medium text-stone-500">Mar 2019 – Present</div>
@@ -304,7 +321,7 @@
                         <p class="font-medium text-stone-600 mb-3">Encore Solutions</p>
                         <div class="timeline-details text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
                             <p>Led strategic planning and delivery of high-impact infrastructure and IoT projects valued up to **Rs 400 million**. Drove scalable transformation by implementing optimized CI/CD pipelines, reducing deployment cycles by **25%**.</p>
-                            <p>Spearheaded the deployment of a comprehensive IoT platform for a major telecom client, resulting in a **20% decrease in downtime** and an **18% reduction in operational costs**.</p>
+                            <p>Spearheaded the deployment of a comprehensive IoT platform for a major telecom client, enabling advanced remote site monitoring and control that resulted in a **20% decrease in downtime** and an **18% reduction in operational costs**.</p>
                             <p>Enhanced cloud efficiency across AWS, Azure, and OCI by implementing stringent security policies and automating configurations, leading to a **30% improvement in operational efficiency**.</p>
                         </div>
                     </div>
@@ -315,7 +332,7 @@
                         <h3 class="text-xl font-bold text-stone-800 cursor-pointer hover:text-teal-600 transition-colors" onclick="toggleTimeline(this)">Linux Engineer</h3>
                         <p class="font-medium text-stone-600 mb-3">STG Systems</p>
                         <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
-                            <p>Automated critical operational tasks using Ansible, significantly decreasing operational workload by **40%** and minimizing errors.</p>
+                            <p>Automated critical operational tasks using Ansible, significantly decreasing operational workload by **40%** and minimizing errors across complex Linux environments.</p>
                             <p>Led the infrastructure migration to a Kubernetes-based cloud environment, utilizing Terraform and Ansible, which enhanced scalability by **50%**.</p>
                             <p>Developed and implemented an automated patch management solution with AWX and Jinja2 templates, reducing patching time by **30%**.</p>
                         </div>
@@ -329,7 +346,7 @@
                         <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
                             <p>Engineered and deployed a high-performance VPN server architecture capable of supporting up to **10,000 simultaneous client connections**.</p>
                             <p>Led a team of 10 in building a telecom IoT platform, resulting in a **22% reduction in operational costs**.</p>
-                            <p>Spearheaded the end-to-end implementation of **Microsoft Dynamics 365**, managing customization and deployment, which increased user productivity by **25%**.</p>
+                            <p>Spearheaded the end-to-end implementation of Microsoft Dynamics 365, managing customization and deployment, which increased user productivity by **25%**.</p>
                         </div>
                     </div>
 
@@ -340,8 +357,7 @@
                         <p class="font-medium text-stone-600 mb-3">LCC Pakistan Pvt. Ltd.</p>
                         <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
                             <p>Developed and implemented an ERP solution that automated project tracking and invoicing, boosting overall business efficiency by **30%**.</p>
-                            <p>Configured and deployed Linux systems for a critical Remote Monitoring System, improving operational control and reducing downtime by **15%**.</p>
-                            <p>Maintained rigorous system standards through daily monitoring and verification, ensuring **99% system availability** and data integrity.</p>
+                            <p>Configured and deployed Linux systems for a critical Remote Monitoring System, improving operational control and reducing downtime for mission-critical applications by **15%**.</p>
                         </div>
                     </div>
                     
@@ -352,7 +368,6 @@
                         <p class="font-medium text-stone-600 mb-3">Mercurial Minds</p>
                         <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
                             <p>Designed and deployed virtual machines (VMware/Xen) and configured network services with **Nagios**, enabling proactive issue identification and resolution.</p>
-                            <p>Implemented and managed Apache, Samba, and Asterisk configurations, enhancing service reliability.</p>
                         </div>
                     </div>
 
@@ -363,7 +378,6 @@
                         <p class="font-medium text-stone-600 mb-3">Earth Factor</p>
                         <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
                             <p>Provided comprehensive Linux administration support for production and development environments, ensuring system stability.</p>
-                            <p>Deployed virtual machines using Xen and managed network configurations to support scalable infrastructure.</p>
                         </div>
                     </div>
                     
@@ -374,7 +388,6 @@
                         <p class="font-medium text-stone-600 mb-3">Society for Sustainable Development</p>
                         <div class="timeline-details hidden text-stone-600 space-y-2 bg-stone-50 p-4 rounded-lg shadow-inner border border-stone-200">
                             <p>Provided comprehensive technical infrastructure support, covering networking, mail server management, and data management.</p>
-                            <p>Managed and configured systems to support cross-functional needs, facilitating efficient data sharing and collaboration.</p>
                         </div>
                     </div>
 
@@ -389,16 +402,18 @@
                     </div>
 
                 </div>
-            </section>
-            
-            <!-- Section: AI & IoT Projects -->
-            <section id="projects" class="hidden">
+            </div>
+        </section>
+        
+        <!-- Section: AI & IoT Projects -->
+        <section id="projects" class="hidden">
+            <div class="max-w-6xl">
                 <h2 class="text-3xl font-bold text-stone-800 mb-6">Innovation Portfolio: AI & IoT Personal Projects</h2>
                 <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
                     This section highlights my hands-on experience in building modern, intelligent systems, demonstrating my commitment to continuous learning and practical innovation. These projects cover everything from serverless IoT architectures to custom LLM applications, reinforcing my skills in AI/MLOps and advanced data processing.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <div class="bg-white p-6 rounded-xl shadow-lg border border-teal-300 transition-shadow hover:shadow-2xl">
                         <h3 class="text-lg font-bold text-teal-700 mb-2">Serverless AWS IoT Architecture Design</h3>
                         <p class="text-stone-600">Designed and prototyped a scalable serverless architecture for IoT data ingestion, processing, and analysis using AWS Lambda, IoT Core, Kinesis, and DynamoDB.</p>
@@ -420,10 +435,12 @@
                         <p class="text-stone-600">Deployed a system enabling conversational interaction with uploaded documents by integrating large language models and automation workflows using n8n for streamlined data extraction and querying.</p>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Section: Education & Certs -->
-            <section id="education" class="hidden">
+        <!-- Section: Education & Certs -->
+        <section id="education" class="hidden">
+            <div class="max-w-6xl">
                 <h2 class="text-3xl font-bold text-stone-800 mb-6">Education & Professional Certifications</h2>
                 <p class="text-base text-stone-600 leading-relaxed max-w-4xl mb-10">
                     My formal education provides a strong theoretical foundation, while my professional certifications validate my expertise in current, high-demand cloud and project management technologies.
@@ -461,10 +478,10 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-        </main>
-    </div>
+    </main>
 
 <script>
     let impactChart = null;
@@ -486,7 +503,6 @@
 
         // Lazy load charts only when their section is shown
         if (sectionId === 'impact' && !impactChart) {
-            // Need a slight delay to ensure Chart.js canvas is fully rendered and sized
             setTimeout(createImpactChart, 10);
         }
         if (sectionId === 'skills' && !skillsRadarChart) {
@@ -569,11 +585,10 @@
     }
 
     function createImpactChart() {
-        if (impactChart) impactChart.destroy(); // Destroy previous instance if exists
+        if (impactChart) impactChart.destroy(); 
 
         const ctx = document.getElementById('impactBarChart').getContext('2d');
         const chartData = {
-            // Data derived directly from resume metrics
             labels: [
                 'Scalability Enhancement (Kubernetes migration)',
                 'Operational Workload Reduction (Ansible automation)',
@@ -584,10 +599,10 @@
             ],
             datasets: [{
                 label: 'Improvement / Reduction (%)',
-                data: [50, 40, 30, 25, 20, 12], // Percentages from resume: 50, 40, 30, 25, 20, 12
-                backgroundColor: '#14b8a6', // Teal-500
-                hoverBackgroundColor: '#0d9488', // Teal-600 on hover
-                borderColor: '#0f766e', // Teal-700
+                data: [50, 40, 30, 25, 20, 12], 
+                backgroundColor: '#14b8a6', 
+                hoverBackgroundColor: '#0d9488', 
+                borderColor: '#0f766e', 
                 borderWidth: 1,
                 borderRadius: 6
             }]
@@ -630,7 +645,7 @@
                             display: false
                         },
                         ticks: {
-                            color: '#44403c' // Stone-800
+                            color: '#44403c' 
                         }
                     }
                 }
@@ -640,7 +655,7 @@
     }
 
     function createSkillsRadarChart() {
-        if (skillsRadarChart) skillsRadarChart.destroy(); // Destroy previous instance if exists
+        if (skillsRadarChart) skillsRadarChart.destroy(); 
 
         const ctx = document.getElementById('skillsRadarChart').getContext('2d');
         const chartData = {
@@ -653,10 +668,10 @@
             ],
             datasets: [{
                 label: 'Expertise Level',
-                data: [9.5, 9.5, 8.5, 9.5, 8.0], // Subjective scores based on experience depth in resume
-                backgroundColor: 'rgba(20, 184, 166, 0.2)', // Teal-500 light
-                borderColor: '#0d9488', // Teal-600
-                pointBackgroundColor: '#0f766e', // Teal-700
+                data: [9.5, 9.5, 8.5, 9.5, 8.0], 
+                backgroundColor: 'rgba(20, 184, 166, 0.2)', 
+                borderColor: '#0d9488', 
+                pointBackgroundColor: '#0f766e', 
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
                 pointHoverBorderColor: '#0d9488'
@@ -704,7 +719,6 @@
     // Initial load function
     window.onload = () => {
         showSection('home', document.querySelector('.nav-link'));
-        // Attach resize listener to keep charts responsive
         window.addEventListener('resize', () => {
              if (impactChart) impactChart.resize();
              if (skillsRadarChart) skillsRadarChart.resize();
